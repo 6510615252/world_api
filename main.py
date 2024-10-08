@@ -6,7 +6,7 @@ from fastapi import FastAPI
 
 # get country data from csv file 
 filename = "world_table_country.csv"
-with open(filename, "r") as csv_file:
+with open(filename, "r", encoding='utf-8') as csv_file:
 	csv_reader = csv.reader(csv_file)
 	headers = next(csv_reader)
 	data_country = [{k: v for (k, v) in zip(headers, row)} for row in csv_reader]
